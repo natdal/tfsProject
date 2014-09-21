@@ -16,4 +16,21 @@ gem 'acts-as-taggable-on' #태그 젬
 heroku로 배포하려면 pg랑 rails_12factor 설치해야됨. git$heroku.txt파일 참조
 
 
+v.0 최초커밋 -> v.0_board gem설치 -> v.0_board CSS및JS추가변경
+
+app/assets/stylesheet/
+application.css.scss
+board.css.scss
+bulletins.css.scss
+comments.css.scss
+custom.css.scss
+posts.css.scss
+scaffolds.css.scss
+
+app/assets/javascripts/
+application.js
+board.js.coffee
+bulletins.js.coffee
+comments.js.coffee
+posts.js.coffee
 
