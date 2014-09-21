@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921094734) do
+ActiveRecord::Schema.define(version: 20140921095526) do
 
   create_table "bulletins", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "post_type",   default: "bulletin"
   end
 
   create_table "posts", force: true do |t|
