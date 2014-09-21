@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'comments/create'
-
-  get 'comments/destroy'
-
-  resources :bulletins
-
   #get 'board/index'
   root 'board#index' #board 컨트롤러의 index액션을 기본 root로 설정
 

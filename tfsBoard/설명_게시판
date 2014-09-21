@@ -118,3 +118,30 @@ v.0_board 게시판레이아웃작성 -> v.0_board 갤러리레이아웃작성 -
 
 rake acts_as_taggable_on_engine:install:migrations
 rake db:migrate
+
+
+
+v.0_board 게시판레이아웃작성 -> v.0_board 갤러리레이아웃작성 -> v.0_board flash메시지 -> v.0_board 기본데이터생성및COMMENT생성 -> v.0_board 태그생성 -> v.0_board post_type Nil Class Error 수정
+
+On branch board
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app/controllers/application_controller.rb
+	modified:   app/controllers/posts_controller.rb
+	deleted:    app/views/comments/create.html.erb
+	deleted:    app/views/comments/destroy.html.erb
+	modified:   app/views/posts/index.html.erb
+	modified:   config/routes.rb
+	modified:   db/seeds.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	public/uploads/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+메모:뽀록으로 고침. 아직도 이해 잘 못함
+다시 공부하자
