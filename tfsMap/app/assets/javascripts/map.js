@@ -198,6 +198,8 @@ function onCompleteLoadGetPOIDataFromSearch() {
 					marker.events.register('mouseout', marker,
 						onMarkerOut);
 
+					main_search.submit;/*결과제출*/
+
 				});
 
 } else if ($(this.responseXML).find("error").text() != '') {
