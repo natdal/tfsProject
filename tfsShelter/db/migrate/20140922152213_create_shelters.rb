@@ -5,6 +5,8 @@ class CreateShelters < ActiveRecord::Migration
       t.text :introduction
       t.string :classification
       t.string :grade
+      t.string :cooldinate_lat
+      t.string :cooldinate_lon
 
       t.timestamps
     end

@@ -69,6 +69,6 @@ class SheltersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelter_params
-      params.require(:shelter).permit(:name, :introduction, :classification, :grade)
+      params.require(:shelter).permit(:name, :introduction, :classification, :grade, :cooldinate_lat, :cooldinate_lon)
     end
 end

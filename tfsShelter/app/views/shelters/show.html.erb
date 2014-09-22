@@ -20,5 +20,15 @@
   <%= @shelter.grade %>
 </p>
 
+<p>
+  <strong>Cooldinate lat:</strong>
+  <%= @shelter.cooldinate_lat %>
+</p>
+
+<p>
+  <strong>Cooldinate lon:</strong>
+  <%= @shelter.cooldinate_lon %>
+</p>
+
 <%= link_to 'Edit', edit_shelter_path(@shelter) %> |
 <%= link_to 'Back', shelters_path %>

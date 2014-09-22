@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :introduction %><br>
-    <%= f.text_field :introduction %>
+    <%= f.text_area :introduction %>
   </div>
   <div class="field">
     <%= f.label :classification %><br>
@@ -26,6 +26,14 @@
   <div class="field">
     <%= f.label :grade %><br>
     <%= f.text_field :grade %>
+  </div>
+  <div class="field">
+    <%= f.label :cooldinate_lat %><br>
+    <%= f.text_field :cooldinate_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :cooldinate_lon %><br>
+    <%= f.text_field :cooldinate_lon %>
   </div>
   <div class="actions">
     <%= f.submit %>

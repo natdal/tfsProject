@@ -7,6 +7,8 @@
       <th>Introduction</th>
       <th>Classification</th>
       <th>Grade</th>
+      <th>Cooldinate lat</th>
+      <th>Cooldinate lon</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +20,8 @@
         <td><%= shelter.introduction %></td>
         <td><%= shelter.classification %></td>
         <td><%= shelter.grade %></td>
+        <td><%= shelter.cooldinate_lat %></td>
+        <td><%= shelter.cooldinate_lon %></td>
         <td><%= link_to 'Show', shelter %></td>
         <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
         <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

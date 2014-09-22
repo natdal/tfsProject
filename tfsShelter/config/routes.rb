@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :shelters
 
-  get 'standard_shelter/index'
+  root 'standard_shelter#index'
+  get 'shelters/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

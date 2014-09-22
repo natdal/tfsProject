@@ -18,7 +18,7 @@ class SheltersControllerTest < ActionController::TestCase
 
   test "should create shelter" do
     assert_difference('Shelter.count') do
-      post :create, shelter: { classification: @shelter.classification, grade: @shelter.grade, introduction: @shelter.introduction, name: @shelter.name }
+      post :create, shelter: { classification: @shelter.classification, cooldinate_lat: @shelter.cooldinate_lat, cooldinate_lon: @shelter.cooldinate_lon, grade: @shelter.grade, introduction: @shelter.introduction, name: @shelter.name }
     end
 
     assert_redirected_to shelter_path(assigns(:shelter))
@@ -35,7 +35,7 @@ class SheltersControllerTest < ActionController::TestCase
   end
 
   test "should update shelter" do
-    patch :update, id: @shelter, shelter: { classification: @shelter.classification, grade: @shelter.grade, introduction: @shelter.introduction, name: @shelter.name }
+    patch :update, id: @shelter, shelter: { classification: @shelter.classification, cooldinate_lat: @shelter.cooldinate_lat, cooldinate_lon: @shelter.cooldinate_lon, grade: @shelter.grade, introduction: @shelter.introduction, name: @shelter.name }
     assert_redirected_to shelter_path(assigns(:shelter))
   end
 

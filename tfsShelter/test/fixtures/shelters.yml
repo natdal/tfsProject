@@ -2,12 +2,16 @@
 
 one:
   name: MyString
-  introduction: MyString
+  introduction: MyText
   classification: MyString
   grade: MyString
+  cooldinate_lat: MyString
+  cooldinate_lon: MyString
 
 two:
   name: MyString
-  introduction: MyString
+  introduction: MyText
   classification: MyString
   grade: MyString
+  cooldinate_lat: MyString
+  cooldinate_lon: MyString
