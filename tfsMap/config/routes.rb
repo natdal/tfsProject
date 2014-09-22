@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  get 't_map/index'
+  get 'commerce/sell_and_buy'
 
-  get 'map/index'
+  get 'home/index'
+
+  get 'home/item_info_view'
+
+  get 'home/blog_view'
+
+  get 'home/blog_list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
