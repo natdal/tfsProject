@@ -1,4 +1,4 @@
-document.write("<script  language='javascript' src='https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=ed27c36c-56a6-3678-ab90-1a4f7ea6eead'></script>");  
+document.write("<script  language='javascript' src='https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=30c68bc1-8813-3f13-9c99-d3660cf91545'></script>");  
 
 var map;
 var zoom, mapW, mapH, mapDiv; //맵 초기화시 사용상수
@@ -29,6 +29,9 @@ function setLayers(){
 
 		markers = new Tmap.Layer.Markers("MarkerLayer");
 		map.addLayer(markers);
+	}else{
+		markers = new Tmap.Layer.Markers("MarkerLayer");
+		map.addLayer(markers);
 	}
 }
 
@@ -42,9 +45,12 @@ function initialize() {
 	setLayers(); //레이어 생성
 }
 
-window.onload = function() {
+$( document ).ready(function(){
 	initialize();
-}
+});
+/*window.onload = function() {
+	initialize();
+}*/
 
 function get3857LonLat(coordX, coordY){//좌표변환메서드
 	lonlat = map.getLonLatFromViewPortPx(coordX, coordY);
@@ -64,7 +70,7 @@ function tMapPoi(){//Poi매서드, 쉘터를 Poi를 이용해 띄워주자
 	tData.events.register("onProgress", tData, onProgressLoadPoiData);
 	tData.events.register("onError", tData, onErrorLoadPoiData);
 
-	var searchText = $('#search').val();
+	var searchText = $('#searchText').val();
 	var encodingSearchText = encodeURIComponent(searchText);
 
 	if (searchText != '') {//검색값이 공백이 아닐 때
@@ -212,7 +218,7 @@ if ($(this.responseXML).find("searchPoiInfo pois poi").text() != '') {
 
 } else {
 
-	map.setCenter(newTmap.LonLat(14134074.680985, 4517814.0870894), 15);
+	map.setCenter(new Tmap.LonLat(14134074.680985, 4517814.0870894), 15);
 
 	markers.clearMarkers();
 
