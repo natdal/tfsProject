@@ -12,3 +12,5 @@ rails g model veriMap shelter:referencse 이런식으로
 맵에 버튼대로 띄워 주자.
 그러니깐 이건 일단 키핑
 쉘터먼저 만들고 올게
+
+v.0 최초커밋 -> v.0_map controller tMap Index 설치 -> v.0_map poi구현
