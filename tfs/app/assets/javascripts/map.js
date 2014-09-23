@@ -55,6 +55,9 @@ function onMarkerOver(e){//쉘터마커오버이벤트
 function onMarkerOut(e){//쉘터마커아웃이벤트
 
 }
+function onMarkerClick(e){
+	
+}
 
 function tMapPoi(){//Poi매서드, 쉘터를 Poi를 이용해 띄워주자
 	tData = new Tmap.TData();//response parameter를 받아주는 클래스
@@ -194,6 +197,10 @@ function onCompleteLoadGetPOIDataFromSearch() {
 
 					marker.events.register('mouseout', marker,
 						onMarkerOut);
+
+					marker.events.register('click', marker,
+						onMarkerClick);
+
 
 					main_search.submit;/*결과제출*/
 

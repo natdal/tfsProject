@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :shelters
+
   #resources :tmaps
   #resources :shelters
   resources :tmaps do

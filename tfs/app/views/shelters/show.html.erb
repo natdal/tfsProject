@@ -1,34 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= render 'myhouse' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shelter.name %>
-</p>
-
-<p>
-  <strong>Introduction:</strong>
-  <%= @shelter.introduction %>
-</p>
-
-<p>
-  <strong>Classification:</strong>
-  <%= @shelter.classification %>
-</p>
-
-<p>
-  <strong>Grade:</strong>
-  <%= @shelter.grade %>
-</p>
-
-<p>
-  <strong>Cooldinate lat:</strong>
-  <%= @shelter.cooldinate_lat %>
-</p>
-
-<p>
-  <strong>Cooldinate lon:</strong>
-  <%= @shelter.cooldinate_lon %>
-</p>
-
-<%= link_to 'Edit', edit_tmap_shelter_path(@shelter) %> |
-<%= link_to 'Back', tmap_shelters_path %>
+<%= link_to 'Edit', edit_shelter_path(@shelter) %> |
+<%= link_to 'Back', shelters_path %>
