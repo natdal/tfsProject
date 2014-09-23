@@ -23,16 +23,8 @@ function setLayers(){
 		return;                                  
 	}
 
-	if(markers!=null){
-		markers.clearMarkers();
-
-
-		markers = new Tmap.Layer.Markers("MarkerLayer");
-		map.addLayer(markers);
-	}else{
-		markers = new Tmap.Layer.Markers("MarkerLayer");
-		map.addLayer(markers);
-	}
+	markers = new Tmap.Layer.Markers("MarkerLayer");
+	map.addLayer(markers);
 }
 
 
@@ -188,7 +180,12 @@ function onCompleteLoadGetPOIDataFromSearch() {
 						+ lowerBizName + "&nbsp;&gt;&nbsp;" 
 						+ detailBizName);
 
+
 					var marker = new Tmap.Markers(new Tmap.LonLat(coordX, coordY), icon, label)
+
+					if(markers!=null){
+						markers.clearMarkers();
+					}
 
 					markers.addMarker(marker);
 

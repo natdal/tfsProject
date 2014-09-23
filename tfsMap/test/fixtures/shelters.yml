@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  introduction: MyText
+  classification: MyString
+  grade: MyString
+  cooldinate_lat: MyString
+  cooldinate_lon: MyString
+
+two:
+  name: MyString
+  introduction: MyText
+  classification: MyString
+  grade: MyString
+  cooldinate_lat: MyString
+  cooldinate_lon: MyString
