@@ -1,0 +1,2 @@
+module StandardShelterHelper
+end

@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TfsMap</title>
+  <title>Viewtest</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+
+<!-- 이부분 메인 딴에서 합체 -->
+<ul class="nav navbar-nav">
+  <li class="<%= params[:tmap_id] == '전체' ? 'active' : '' %>"><%= link_to '전체', tmap_shelters_path('공지사항') %></li>
+  <li class="<%= params[:tmap_id] == '커머스' ? 'active' : '' %>"><%= link_to '커머스', tmap_shelters_path('새소식') %></li>
+  <li class="<%= params[:tmap_id] == '블로그' ? 'active' : '' %>"><%= link_to '블로그', tmap_shelters_path('가입인사') %></li>
+</ul>
+<!--  -->
+
+
+
+<div class="wrap">
+<%= render "layouts/header"  %>
 <%= yield %>
+<%= render "layouts/mini_nav"  %>
+</div>
 
 </body>
 </html>
+
