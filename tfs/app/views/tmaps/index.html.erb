@@ -1,0 +1,31 @@
+<h1>Listing tmaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Classification</th>
+      <th>Coordinate lat</th>
+      <th>Coordinat lon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tmaps.each do |tmap| %>
+      <tr>
+        <td><%= tmap.name %></td>
+        <td><%= tmap.classification %></td>
+        <td><%= tmap.coordinate_lat %></td>
+        <td><%= tmap.coordinat_lon %></td>
+        <td><%= link_to 'Show', tmap %></td>
+        <td><%= link_to 'Edit', edit_tmap_path(tmap) %></td>
+        <td><%= link_to 'Destroy', tmap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tmap', new_tmap_path %>

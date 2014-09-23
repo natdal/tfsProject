@@ -1,0 +1,15 @@
+<% @shelters.each do |shelter| %>
+  <tr>
+    <td><%= shelter.name %></td>
+        <td><%= shelter.introduction %></td>
+        <td><%= shelter.classification %></td>
+        <td><%= shelter.grade %></td>
+        <td><%= shelter.cooldinate_lat %></td>
+        <td><%= shelter.cooldinate_lon %></td>
+    <td>
+      <%= link_to 'Show', [shelter.tmap, shelter], class:'btn btn-default' %>
+      <%= link_to 'Edit', edit_tmap_shelter_path(shelter.tmap, shelter), class:'btn btn-default' %>
+      <%= link_to 'Destroy', [shelter.tmap, shelter], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
+    </td>
+  </tr>
+<% end %>
