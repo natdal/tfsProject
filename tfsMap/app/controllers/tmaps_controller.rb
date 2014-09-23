@@ -64,7 +64,8 @@ class TmapsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tmap
-      @tmap = Tmap.find(params[:id])
+      @tmap = Tmap.find(params[:id]).any ? Tmap.find(params[:id]) : [] 
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

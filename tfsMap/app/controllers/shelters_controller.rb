@@ -70,7 +70,7 @@ class SheltersController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_shelter
-      @shelter = @tmap.shelters.find(params[:id])
+      @shelter = @tmap.shelters.find(params[:id]) unless @tmap.shelters.find(params[:id]) == nill 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
