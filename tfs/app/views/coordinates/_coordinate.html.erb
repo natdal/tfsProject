@@ -1,0 +1,6 @@
+<li id="coordinate_<%=coordinate.id %>">
+  <%= coordinate.lat %>,
+  <%= coordinate.lon %>,
+  <%= time_ago_in_words(coordinate.created_at) %> ago
+  <%= link_to icon('remove-circle'), [coordinate.shelter, comment], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+</li>

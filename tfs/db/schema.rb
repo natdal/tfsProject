@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923111539) do
+ActiveRecord::Schema.define(version: 20140923115820) do
+
+  create_table "coordinates", force: true do |t|
+    t.integer  "shelter_id"
+    t.string   "lat"
+    t.string   "lon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "coordinates", ["shelter_id"], name: "index_coordinates_on_shelter_id"
 
   create_table "shelters", force: true do |t|
     t.string   "name"
