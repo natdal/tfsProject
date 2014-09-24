@@ -14,6 +14,3 @@ rails g migration AddTmapinIdToShelters shelter_id:Integer:index
 
 
 이부분 메인 딴에서 합체
-
-
-

@@ -5,7 +5,7 @@ class CoordinatesController < ApplicationController
 
 
   def create
-  	@coordinate = @post.coordinates.new(coordinate_params)
+  	@coordinate = @shelter.coordinates.new(coordinate_params)
     @coordinate.save
   end
 
@@ -25,6 +25,6 @@ class CoordinatesController < ApplicationController
   end
 
   def coordinate_params
-    params.require(:coordinate).permit(:body)
+    params.require(:coordinate).permit(:lat,:lon)
   end
 end

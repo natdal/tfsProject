@@ -14,6 +14,8 @@
       <tr>
         <td><%= shelter.name %></td>
         <td><%= shelter.introduce %></td>
+        <td><%= shelter.cooridnate.lat %></td>
+        <td><%= shelter.cooridnate.lon %></td>
         <td><%= link_to 'Show', shelter %></td>
         <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
         <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
