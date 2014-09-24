@@ -25,9 +25,6 @@ class SheltersController < ApplicationController
   # POST /shelters.json
   def create
     @shelter = @user.shelter.new(shelter_params)
-    #@shelter = Shelter.new(shelter_params)
-    #@shelter = current_user.shelters.build(shleter_params)
-    #@shelter = current_user.shelters.create(shelter_params)
 
     respond_to do |format|
       if @shelter.save
