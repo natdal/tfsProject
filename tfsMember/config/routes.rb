@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  #get 'tmap/index'
+  #get 'tmap/show'
+  #get 'tmap/create'
+  #get 'tmap/new'
+  resources :tmaps do
+    resources :shelters, only: [:create, :index, :show, :new]
+  end
+
   resources :shelters
 
   root                 'static_pages#home'

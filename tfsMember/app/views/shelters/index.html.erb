@@ -7,6 +7,7 @@
       <th>Introduce</th>
       <th>Lan</th>
       <th>Lon</th>
+      <th>Lonlaat</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,8 @@
         <td><%= shelter.introduce %></td>
         <td><%= shelter.lan %></td>
         <td><%= shelter.lon %></td>
+        <td><%= shelter.lonlat %></td>
+        <td><%= shelter.kind %></td>
         <td><%= link_to 'Show', shelter %></td>
         <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
         <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

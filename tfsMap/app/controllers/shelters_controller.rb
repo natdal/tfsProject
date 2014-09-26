@@ -1,7 +1,7 @@
 class SheltersController < ApplicationController
   before_action :set_tmap
   before_action :set_shelter, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /shelters
   # GET /shelters.json
   def index
@@ -31,6 +31,7 @@ class SheltersController < ApplicationController
       if @shelter.save
         format.html { redirect_to @shelter, notice: 'Shelter was successfully created.' }
         format.json { render :show, status: :created, location: @shelter }
+
       else
         format.html { render :new }
         format.json { render json: @shelter.errors, status: :unprocessable_entity }

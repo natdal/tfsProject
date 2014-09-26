@@ -1,33 +1,64 @@
 <%= form_for(@shelter) do |f| %>
-  <% if @shelter.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@shelter.errors.count, "error") %> prohibited this shelter from being saved:</h2>
+<% if @shelter.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@shelter.errors.count, "error") %> prohibited this shelter from being saved:</h2>
 
-      <ul>
-      <% @shelter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @shelter.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :introduce %><br>
+  <%= f.text_field :introduce %>
+</div>
+<div class="field">
+  <%= f.label :lan %><br>
+  <%= f.text_field :lan %>
+</div>
+<div class="field">
+  <%= f.label :lon %><br>
+  <%= f.text_field :lon %>
+</div>
+<div class="field">
+  <%= f.label :lonlat %><br>
+  <%= f.text_field :lonlat, id: "lonlat"%>
+</div>
+
+<div id="map_div" style="position:relative; width:100%px; height:300px; ">
+</div>
+<!-- 
+<div class="field">
+  <#%=link_to_remote "Show to shelter",
+  :confirm => "gogo",
+  :url => shelter_url(:user_id),
+  :show => { :success => "lonlat", :failure => "error" },
+  :method => :index %>
+</div> -->
+<div class="field" style="display: block;">
+  <% @shelters.each do |shelter| %>
+    <div class="shelter_lonlat">
+      <%=shelter.lonlat%>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :introduce %><br>
-    <%= f.text_field :introduce %>
-  </div>
-  <div class="field">
-    <%= f.label :lan %><br>
-    <%= f.text_field :lan %>
-  </div>
-  <div class="field">
-    <%= f.label :lon %><br>
-    <%= f.text_field :lon %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+<div class="field">
+  <%= f.label :kind %><br>
+  <%= f.text_field :kind %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

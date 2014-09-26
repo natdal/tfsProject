@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924114804) do
+ActiveRecord::Schema.define(version: 20140925074147) do
 
   create_table "microposts", force: true do |t|
     t.text     "content"
@@ -42,9 +42,17 @@ ActiveRecord::Schema.define(version: 20140924114804) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "tmap_id"
+    t.string   "kind"
+    t.string   "lonlat"
   end
 
   add_index "shelters", ["user_id"], name: "index_shelters_on_user_id"
+
+  create_table "tmaps", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
