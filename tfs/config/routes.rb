@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
 
+
+  resources :shelters
+
   #resources :tmaps
   #resources :shelters
   resources :tmaps do
     resources :shelters
+  end
+
+  #get 'coordinates/set'
+  #get 'coordinates/get'
+  #get 'coordinates/edit'
+  #get 'coordinates/destroy'
+  resources :shelters do
+    resources :coordinates, only: [:create, :destroy]
   end
 
   get 'commerce/sell_and_buy'

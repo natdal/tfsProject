@@ -1,0 +1,18 @@
+<% coordinate = @shelter.coordinates.new %>
+<div id="coordinates_form_<%=@shelter.id%>">
+	<%= form_for([@shelter, coordinate], remote: true ) do | f | %>
+	<div class='form-group'>
+		<!-- tMap띄우고 여기서 좌표찾자, 주소를 검색할수도 있그로 -->
+		<div id="map_div"></div>
+		<div class="field">
+			<%= f.label :lat %><br>
+			<%= f.text_area :lat %>
+		</div>
+		<div class="field">
+			<%= f.label :lon %><br>
+			<%= f.text_area :lon %>
+		</div>
+	</div>
+	<%= f.button :submit, class: 'btn btn-default' %>
+	<% end %>
+</div>

@@ -6,24 +6,21 @@
 		</div>
 		<!--profile_wrap end-->
 
-
+		<!-- 쉘터생성값 -->
 		<p>
-			<strong>Classification:</strong>
-			<%= @shelter.classification %>
+			<strong>name:</strong>
+			<%= @shelter.name %>
 		</p>
 		<p>
-			<strong>Grade:</strong>
-			<%= @shelter.grade %>
+			<strong>intoroduce:</strong>
+			<%= @shelter.introduce %>
 		</p>
 		<p>
-			<strong>Cooldinate lat:</strong>
-			<%= @shelter.cooldinate_lat %>
+			<strong>coordinate:</strong>
+			<%= @shelter.coordinate.lat %>,
+			<%= @shelter.coordinate.lon %>
 		</p>
-		<p>
-			<strong>Cooldinate lon:</strong>
-			<%= @shelter.cooldinate_lon %>
-		</p>
-
+		<!-- 쉘터생성값 -->
 		
 		<!--myhouse_wrap 김수겸 19.09.21-->
 		<div class="col-lg-9">

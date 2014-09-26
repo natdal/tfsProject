@@ -1,5 +1,8 @@
 document.write("<script  language='javascript' src='https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=30c68bc1-8813-3f13-9c99-d3660cf91545'></script>");  
 
+
+
+
 var map;
 var zoom, mapW, mapH, mapDiv; //맵 초기화시 사용상수
 var lonlat, pr_3857, pr_4326; //좌표변환 관련 상수
@@ -54,6 +57,9 @@ function onMarkerOver(e){//쉘터마커오버이벤트
 }
 function onMarkerOut(e){//쉘터마커아웃이벤트
 
+}
+function onMarkerClick(e){
+	
 }
 
 function tMapPoi(){//Poi매서드, 쉘터를 Poi를 이용해 띄워주자
@@ -140,10 +146,10 @@ function onCompleteLoadGetPOIDataFromSearch() {
 							'<div><span class="num">'
 							+ ($(this).index() + 1)
 							+ '</span>&nbsp;<span class="imgSpan"><img src="img/sampleIcon.png"></span><span class="poiResultList"><a href="javascript:selectPoi('
-							+ coordX + ',' + coordY
-							+ ')"style="text-decoration:none; *margin-top:-10px;">'
-							+ name
-							+ '</a></span></div><br/><br/>');
+								+ coordX + ',' + coordY
+								+ ')"style="text-decoration:none; *margin-top:-10px;">'
+						+ name
+						+ '</a></span></div><br/><br/>');
 
 						var icon = new Tmap.IconHtml("<img src='img/sampleIcon.png'/>", size, offset);//marker
 
@@ -155,49 +161,63 @@ function onCompleteLoadGetPOIDataFromSearch() {
 							+ '</span>&nbsp;<span class="imgSpan"><img src="img/sampleIcon'
 							+ ($(this).index() + 1)
 							+ '.png"></span><span class="poiResultList"><a href="javascript:selectPoi('
-							+ coordX + ',' + coordY
-							+ ')"style="text-decoration:none;*margin-top:-10px;">'
-							+ name
-							+ '</a></span></div><br/><br/>');
+								+ coordX + ',' + coordY
+								+ ')"style="text-decoration:none;*margin-top:-10px;">'
+						+ name
+						+ '</a></span></div><br/><br/>');
 
 						var icon = new Tmap.IconHtml(//marker
 							"<img src='img/sampleIcon"
 							+ ($(this).index() + 1)
 							+ ".png'/>", size, offset);
 
-					}
-
-					var label = new Tmap.Label(
-						"&nbsp;상호명 : " 
-						+ name
-						+ "<br/><br/>&nbsp;주소 : " 
-						+ upperAddrName + " " 
-						+ middleAddrName + "" 
-						+ lowerAddrName
-						+ "<br/><br/>&nbsp;구분 : " 
-						+ upperBizName + "&nbsp;&gt;&nbsp;" 
-						+ middleBizName + "&nbsp;&gt;&nbsp;" 
-						+ lowerBizName + "&nbsp;&gt;&nbsp;" 
-						+ detailBizName);
+						var shelterIcon = new Tmap.IconHtml("<!-- 버튼 이미지 --><img class='imgSelect' src='../images/button.gif' alt='버튼1' /><img class='imgSelect' src='../images/button.gif' alt='버튼2' /><img class='imgSelect' src='../images/button.gif' alt='버튼3' /><!-- //버튼 이미지 --><!-- 폼 레이어  --><!-- shelter_view 김수겸 14.09.23 --><div id='shelter_view' class='panel panel-default shelter_view'><div class='panel-heading'>사용자님의 목록</div><div class='panel-body'><div class='user_item_list'><a ><div class='media my_media'><a class='pull-left' href='#'><%= image_tag '11111.PNG',size:'50x50'%></a><div class='media-body'>샬라샬라</div></div></a></div></div><div class='panel-footer btn btn-defaul'>집 놀러가볼까</div></div><!-- shelter_view end -->"	,size,offset);}
 
 
-					var marker = new Tmap.Markers(new Tmap.LonLat(coordX, coordY), icon, label)
+var label = new Tmap.Label(
+	"&nbsp;상호명 : " 
+	+ name
+	+ "<br/><br/>&nbsp;주소 : " 
+	+ upperAddrName + " " 
+	+ middleAddrName + "" 
+	+ lowerAddrName
+	+ "<br/><br/>&nbsp;구분 : " 
+	+ upperBizName + "&nbsp;&gt;&nbsp;" 
+	+ middleBizName + "&nbsp;&gt;&nbsp;" 
+	+ lowerBizName + "&nbsp;&gt;&nbsp;" 
+	+ detailBizName);
 
-					if(markers!=null){
-						markers.clearMarkers();
-					}
 
-					markers.addMarker(marker);
+/*var marker = new Tmap.Markers(new Tmap.LonLat(coordX, coordY), icon, label)*/
+var shelterMarker = new Tmap.Markers(new Tmap.LonLat(coordX, coordY), shelterIcon, label);
 
-					marker.events.register('mouseover', marker,
-						onMarkerOver);
+//popup 인스턴스 생성. 마지막 인자는 close 버튼의 여부를 나타냄.
+/*var popup = new Tmap.Popup("lablePopup",  new Tmap.LonLat(coordX, coordY),  new Tmap.Size(100,20), "명동",  false);*/
+var shelterPopup = new  Tmap.Popup("lablePopup",  new Tmap.LonLat(coordX, coordY),  new Tmap.Size(100,20), "<!-- 버튼 이미지 --><img class='imgSelect' src='../images/button.gif' alt='버튼1' /><img class='imgSelect' src='../images/button.gif' alt='버튼2' /><img class='imgSelect' src='../images/button.gif' alt='버튼3' /><!-- //버튼 이미지 --><!-- 폼 레이어  --><!-- shelter_view 김수겸 14.09.23 --><div id='shelter_view' class='panel panel-default shelter_view'><div class='panel-heading'>사용자님의 목록</div><div class='panel-body'><div class='user_item_list'><a ><div class='media my_media'><a class='pull-left' href='#'><%= image_tag '11111.PNG',size:'50x50'%></a><div class='media-body'>샬라샬라	</div></div></a></div></div><div class='panel-footer btn btn-defaul'>집 놀러가볼까</div></div>",false);
 
-					marker.events.register('mouseout', marker,
-						onMarkerOut);
+/*map.addPopup(popup);*/
+map.addPopup(shelterPopup);
 
-					main_search.submit;/*결과제출*/
+if(markers!=null){
+	markers.clearMarkers();
+}
 
-				});
+/*markers.addMarker(marker);*/
+markers.addMarker(shelterMarker);
+
+marker.events.register('mouseover', marker,
+	onMarkerOver);
+
+marker.events.register('mouseout', marker,
+	onMarkerOut);
+
+marker.events.register('click', marker,
+	onMarkerClick);
+
+
+main_search.submit;/*결과제출*/
+
+});
 
 } else if ($(this.responseXML).find("error").text() != '') {
 

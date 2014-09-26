@@ -1,4 +1,3 @@
 class Shelter < ActiveRecord::Base
-
-	belongs_to :tmap
+	has_many :coordinates, dependent: :destroy
 end
