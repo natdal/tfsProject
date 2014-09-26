@@ -11,36 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923050237) do
+ActiveRecord::Schema.define(version: 20140923115820) do
+
+  create_table "coordinates", force: true do |t|
+    t.integer  "shelter_id"
+    t.string   "lat"
+    t.string   "lon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "coordinates", ["shelter_id"], name: "index_coordinates_on_shelter_id"
 
   create_table "shelters", force: true do |t|
     t.string   "name"
-    t.text     "introduction"
-    t.string   "classification"
-    t.string   "grade"
-    t.string   "cooldinate_lat"
-    t.string   "cooldinate_lon"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "shelter_id"
-  end
-
-  add_index "shelters", ["shelter_id"], name: "index_shelters_on_shelter_id"
-
-  create_table "t_maps", force: true do |t|
-    t.string   "name"
-    t.string   "classification"
-    t.string   "coordinate_lat"
-    t.string   "coordinate_lon"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tmaps", force: true do |t|
-    t.string   "name"
-    t.string   "classification"
-    t.string   "coordinate_lat"
-    t.string   "coordinat_lon"
+    t.text     "introduce"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

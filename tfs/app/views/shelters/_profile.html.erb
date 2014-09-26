@@ -1,18 +1,23 @@
 <div class="profile_wrap">
 	<p>
-  <strong>Name:</strong>
-  <%= @shelter.name %>
-</p>
+		<strong>Name:</strong>
+		<%= @shelter.name %>
+	</p>
 	<a href="" class="profile"> <%= image_tag "sample.PNG", size: "210x210" %></a>
 	<p>
-  <strong>Introduction:</strong>
-  <%= @shelter.introduction %>
-</p>
+		<strong>Introduce:</strong>
+		<%= @shelter.introduce %>
+	</p>
+	<p>
+		<strong>coordinate:</strong>
+		<%= @shelter.coordinate.lat %>,
+		<%= @shelter.coordinate.lon %>
+	</p>
 	<!--i-->
 	<script type="text/javascript">
-		$(function() {
-			$(".tfs_tooltip").tooltip();
-		});
+	$(function() {
+		$(".tfs_tooltip").tooltip();
+	});
 	</script>
 	<a class="tfs_tooltip" href="#" data-toggle="tooltip" data-placement="bottom" title="프로필 설정" style="position:absolute; top:0; right:0;"><i class="fa fa-cog"></i></a>
 	<!--i-->

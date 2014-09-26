@@ -1,11 +1,11 @@
 class SheltersController < ApplicationController
-  before_action :set_tmap
   before_action :set_shelter, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_coordinate, only: [:show, :destroy]
+  before_action :create_coordinate, only: [:create]
   # GET /shelters
   # GET /shelters.json
   def index
-    @shelters = @tmap.Shelter.all
+    @shelters = Shelter.all
   end
 
   # GET /shelters/1
@@ -63,18 +63,21 @@ class SheltersController < ApplicationController
   end
 
   private
+    def set_coordinate
+      @coordinate = Coordinate.find(params[:id])
+    end
 
-    def set_tmap
-      @tmap = Tmap.friendly.find(params[:tmap_id])
+    def create_coordinate
+      @coordinate = Coordinate.new
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_shelter
-      @shelter = @tmap.shelters.find(params[:id]) unless @tmap.shelters.find(params[:id]) == nill 
+      @shelter = Shelter.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelter_params
-      params.require(:shelter).permit(:name, :introduction, :classification, :grade, :cooldinate_lat, :cooldinate_lon)
+      params.require(:shelter).permit(:name, :introduce, :lat, :lon)
     end
 end
