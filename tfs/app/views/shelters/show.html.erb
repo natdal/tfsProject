@@ -1,17 +1,24 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<%= render "coordinates/coordinates" %>
+<p id="notice"><%= notice %></p>
 
-<!-- <#%= render 'myhouse' %> -->
+<p>
+  <strong>Name:</strong>
+  <%= @shelter.name %>
+</p>
+
+<p>
+  <strong>Introduce:</strong>
+  <%= @shelter.introduce %>
+</p>
+<p>
+  <strong>Lonlat:</strong>
+  <%= @shelter.lonlat %>
+</p>
+<p>
+  <strong>Kind:</strong>
+  <%= @shelter.kind %>
+</p>
+
+<%= render "shelters/shelter/myhouse" %> 
 
 <%= link_to 'Edit', edit_shelter_path(@shelter) %> |
 <%= link_to 'Back', shelters_path %>
-
-

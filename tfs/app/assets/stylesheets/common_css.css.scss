@@ -44,6 +44,16 @@ margin-bottom:3px;
 	display:table-cell;
 }
 
+.vertical_array_menu{
+
+}
+.vertical_array_menu>ul{
+	display: table;
+}
+.vertical_array_menu>ul>li{
+	display: table-row;	
+}
+
 .common_select_btn_100px>select{
 	width: 100px;
 }
@@ -57,8 +67,7 @@ margin-bottom:3px;
 	width: 100%;
 }
 .content_re{
-	position: relative;
-	top:50px;
+	position: relative;	
 	width: 100%;
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -81,6 +90,13 @@ margin-bottom:3px;
 	width: 100%;
 	padding: 2px;
 }
+.left_wrap_fi,.right_wrap_fi{
+	position: fixed;	
+	top:50px;
+	width: 100%;
+	height: 100%;
+	padding: 2px;
+}
 .left_wrap_ab, .right_wrap_ab{
 	height: 100%;
 	width: 50%;
@@ -100,3 +116,4 @@ margin-bottom:3px;
 	position: absolute;
 	bottom: 0;
 }
+

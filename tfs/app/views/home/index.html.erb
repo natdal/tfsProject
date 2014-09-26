@@ -71,7 +71,7 @@
 	<!--tmap div 김수겸 end-->
 
 	<!--list_wrap 김수겸 14.09.11-->
-	<div class="list_wrap content" id="list_wrap" style="display:block;">
+	<div class="list_wrap content">
 		<!--전체-->
 		<%= render 'all_wrap'%>
 		<!--전체 end-->
@@ -85,10 +85,17 @@
 		<!--블로그 end-->
 	</div>
 	<!--list_wrap end-->
-	<!--list_wrap js 김수겸 14.09.13-->
-	<script type="text/javascript"></script>
-	<!--list_wrap js end-->
+	
 </div>
 <!--main wrap end-->	
 
 
+
+
+<div class="field" style="display: hidden;"><!-- 이거 나중에 바꾸자. 반드시 -->
+  <% @shelters.each do |shelter| %>
+    <div class="shelter_lonlat">
+      <%=shelter.lonlat%>
+    </div>
+  <% end %>
+</div>

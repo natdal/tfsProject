@@ -1,5 +1,5 @@
-<div id="top">
-    <!-- 상단네비게이션창 김수겸 14.09.01-->
+<!-- 상단네비게이션창 김수겸 14.09.01-->
+<div id="top">    
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -11,7 +11,7 @@
             <%= link_to '247', root_path,class:'navbar-brand' %>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <div class="search_bar">
+            <div class="serch_bar">
                 <form class="navbar-form navbar-left" role="search" id="main_search"><!-- id 값줬다 -->
                     <select class="btn btn-info btn-line">
                         <option value="전체">전체</option>
@@ -21,7 +21,7 @@
                     <div class="form-group" id="serch_horizon">
                         <input type="text" class="form-control" placeholder="Search" id="searchText"><!-- 수정 : id 추가 -->
                     </div>
-                    <a class="btn btn-info btn-line" onClick="tMapPoi()"> <!-- 수정 : onClick추가 -->
+                    <a class="btn btn-info btn-line" onClick="tMapPoi()"> <!-- 수정 : <button> => <a>, onClick추가 -->
                         검색
                     </a>
                 </form>
@@ -146,15 +146,13 @@
                     </div> </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <!-- <a href="#"><span>내집가기</span> </a> -->
-                            <%= link_to "내집가기", shelters_path(id: 1), class:'btn btn-default' %><!-- 수정 : show딴 만든 후에 여기에 내 쉘터 id값으로 가는걸로 path바꾸자
-shelter_path(id: shelter_id) 이런식으로 -->
+                            <a href="#"><span>내집가기</span> </a>
                         </li>
                         <li>                            
                             <a href="blog_list" class="ajax-link"> <span>내블로그가기</span> </a>
                         </li>
                         <li>
-                            <a href="ajax/page_messages.html" class="ajax-link"> <span>내커머스가기</span> </a>
+                            <a href="sell_and_buy" class="ajax-link"> <span>내커머스가기</span> </a>
                         </li>
                         <li>
                             <a href="ajax/page_messages.html" class="ajax-link"> <span>로그아웃</span> </a>
