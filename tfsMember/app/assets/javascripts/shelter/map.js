@@ -80,8 +80,7 @@ var initialize = function(){
 	
 	locEvents();
 
-	/*shelterLoader();*/
-	onTest();
+	shelterLoader();
 };
 
 $(initialize);
@@ -270,16 +269,8 @@ if ($(this.responseXML).find("searchPoiInfo pois poi").text() != '') {
 
 
 
-
-
-
-
-
-
-
-
-
-function onTest(){
+/*좌표값말고 다른것도 받아도된다*/
+function shelterLoader(){
 
 	var size = new Tmap.Size(22, 30);
 	var offset = new Tmap.Pixel(-(size.w / 2), -size.h);
