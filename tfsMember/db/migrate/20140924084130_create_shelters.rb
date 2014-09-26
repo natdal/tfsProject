@@ -3,8 +3,6 @@ class CreateShelters < ActiveRecord::Migration
     create_table :shelters do |t|
       t.string :name
       t.string :introduce
-      t.string :lan
-      t.string :lon
 
       t.timestamps
     end

@@ -16,6 +16,7 @@ class SheltersController < ApplicationController
   # GET /shelters/1
   # GET /shelters/1.json
   def show
+    @shelter =  Shelter.find(params[:id])
   end
 
   # GET /shelters/new
@@ -35,8 +36,6 @@ class SheltersController < ApplicationController
   def create
     #@shelter = Shelter.new(shelter_params)
     @shelter = @user.shelter.new(shelter_params)
-    #@shelter.tmap_id = @tmap
-    #@shelter.id = 1
     @tmap = Tmap.new(id: 1)
     @shelter.tmap_id = @tmap.id
     respond_to do |format|
@@ -105,6 +104,6 @@ class SheltersController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelter_params
-      params.require(:shelter).permit(:id, :name, :introduce, :lan, :lon, :kind, :lonlat)
+      params.require(:shelter).permit(:name, :introduce, :kind, :lonlat)
     end
 end

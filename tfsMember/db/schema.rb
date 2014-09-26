@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 20140925074147) do
   create_table "shelters", force: true do |t|
     t.string   "name"
     t.string   "introduce"
-    t.string   "lan"
-    t.string   "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

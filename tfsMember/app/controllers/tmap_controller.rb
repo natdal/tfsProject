@@ -29,6 +29,6 @@ class TmapController < ApplicationController
   end
 
   def tmap_params
-    params.require(:tmap).permit(:lan, :lon, :type)
+    params.require(:tmap).permit(:lonlat, :type)
   end
 end
