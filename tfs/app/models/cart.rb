@@ -4,6 +4,6 @@ class Cart < ActiveRecord::Base
 
 
 	def tax_pct #부가세 가 있을경우 
-    	0 
+    	10
   	end
 end

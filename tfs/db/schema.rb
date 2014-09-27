@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925074147) do
+ActiveRecord::Schema.define(version: 20140927110544) do
 
   create_table "bulletins", force: true do |t|
     t.string   "title"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20140925074147) do
     t.datetime "updated_at"
     t.string   "post_type",   default: "bulletin"
   end
+
+  create_table "cart_items", force: true do |t|
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.integer "quantity"
+    t.integer "item_id"
+    t.string  "item_type"
+    t.float   "price"
+  end
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id", unique: true
 
   create_table "comments", force: true do |t|
     t.integer  "post_id"
@@ -40,6 +57,27 @@ ActiveRecord::Schema.define(version: 20140925074147) do
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
+  create_table "orders", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.string   "receive_name"
+    t.string   "addr"
+    t.string   "phone"
+    t.string   "memo"
+    t.integer  "total_cost"
+    t.string   "trade_type"
+    t.string   "payer"
+    t.integer  "status"
+    t.integer  "ship_cost"
+    t.string   "ship_company"
+    t.string   "trans_num"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -50,6 +88,21 @@ ActiveRecord::Schema.define(version: 20140925074147) do
   end
 
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id"
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture"
+    t.string   "picture2"
+    t.string   "picture3"
+    t.text     "content"
+    t.string   "category"
+  end
+
+  add_index "products", ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -94,6 +147,11 @@ ActiveRecord::Schema.define(version: 20140925074147) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
+  create_table "tests", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tmaps", force: true do |t|
     t.datetime "created_at"

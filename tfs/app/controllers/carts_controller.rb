@@ -4,9 +4,13 @@ class CartsController < ApplicationController
   def create
      @product = Product.find(params[:id])
     #@product = Product.first
-    @cart = @product.price
-    #@cart.add(@product, @product.price)
+    if params[:amount].nil? 
+    @cart.add(@product, @product.price)
     redirect_to cart_path
+  else
+    @cart.add(@product, @product.price, params[:amount])
+    redirect_to cart_path
+  end
   end
 
   def show

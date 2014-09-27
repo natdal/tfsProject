@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     	@product = @user.products.build(product_params)
     	if @product.save
       	
-      	redirect_to product_url
+      	redirect_to @product
       	
     	else
       	@product = []
