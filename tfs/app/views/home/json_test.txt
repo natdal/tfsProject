@@ -1,0 +1,38 @@
+{
+    "data": [
+       {
+                            "product_name" : "슬랙스 면바지",
+                            "product_price" : "23000",
+                            "product_quantity" : "20",
+                            "product_info" : "100%면",
+                            "ship_office" : '한진택배',
+                            "ship_select" : '무료',
+                            "product_adress" : "경기도 평택시 합정동 주공아파트 308동 202호",
+                            "product_image" : "11111.PNG",
+                            "product_status" : "신규주문",
+                            "product_date" : "09/23/2014"
+                        }, {
+                            "product_name" : "슬랙스 반바지",
+                            "product_price" : "1200",
+                            "product_quantity" : "20",
+                            "product_info" : "100%면",
+                            "ship_office" : '한진택배',
+                            "ship_select" : '무료',
+                            "product_adress" : "경기도 평택시 합정동 주공아파트 308동 202호",
+                            "product_image" : "11111.PNG",
+                            "product_status" : "배송중",
+                            "product_date" : "09/23/2014"
+                        }, {
+                            "product_name" : "스웨터",
+                            "product_price" : "123000",
+                            "product_quantity" : "20",
+                            "product_info" : "100%면",
+                            "ship_office" : 'cj택배',
+                            "ship_select" : '무료',
+                            "product_adress" : "경기도 평택시 합정동 주공아파트 308동 202호",
+                            "product_image" : "11111.PNG",
+                            "product_status" : "취소요청",
+                            "product_date" : "09/23/2014"
+                        }
+    ]
+}

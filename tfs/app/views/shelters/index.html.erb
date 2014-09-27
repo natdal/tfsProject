@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Introduce</th>
+      <th>Lonlat</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +15,8 @@
       <tr>
         <td><%= shelter.name %></td>
         <td><%= shelter.introduce %></td>
-        <td><%= shelter.cooridnate.lat %></td>
-        <td><%= shelter.cooridnate.lon %></td>
+        <td><%= shelter.lonlat %></td>
+        <td><%= shelter.kind %></td>
         <td><%= link_to 'Show', shelter %></td>
         <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
         <td><%= link_to 'Destroy', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,6 +1,0 @@
-<% if @coordinate.errors.size == 0 %>
-  $('<%=j render @coordinate %>').appendTo($("#coordinates_list_<%=@shelter.id %>")).hide().fadeIn('fast');
-  $("#coordinates_form_<%=@shelter.id %> form")[0].reset();
-<% else %>
-  alert("Please submit after commenting...");
-<% end %>
