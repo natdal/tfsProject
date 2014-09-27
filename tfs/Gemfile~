@@ -18,6 +18,7 @@ gem 'jquery-ui-rails', '~> 5.0.0'
 #게시판과정
 gem 'simple_form' #bootstrap과 함께 form을 사용할 때 잘 어울리는 젬
 gem 'acts-as-taggable-on' #태그 젬
+gem 'friendly_id', '~> 5.0.0' #id값 대신에 특정 속성값으로 호출을 해주는 젬(ex localhost:3000/bulletin/id=2 대신에 localhost:3000/bulletin/공지사항)
 
 
 
