@@ -4,9 +4,13 @@ class UsersController < ApplicationController
    # 모든 유저보기 , 유저 설정 , 업데이트 , 삭제 는 로그인상태일때만 가능  
   before_action :correct_user,   only: [:edit, :update] # 해당 아이디로 로그인 상태일때만 설정 및 업데이트 가능
   before_action :admin_user,     only: :destroy # destroy action은 관리자만 가능
-
+  
   def new
-    @user = User.new
+    if logged_in? 
+      redirect_to root_url
+    end
+
+    @user = User.new 
   end
   
   

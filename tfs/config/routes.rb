@@ -6,6 +6,20 @@ Rails.application.routes.draw do
   #end
   resources :shelters
 
+#카트
+  resource :cart
+#주문
+  resources :orders
+#테스트
+  resources :tests
+#상품
+get 'product' => 'products#index'
+resources :products do
+      # get 'delete' => 'carts#destory'
+end
+
+
+
 
 #유저
   #root                 'static_pages#home'
