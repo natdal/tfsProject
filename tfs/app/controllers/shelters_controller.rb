@@ -29,6 +29,8 @@ class SheltersController < ApplicationController
 
   # GET /shelters/1/edit
   def edit
+    @shelter =  Shelter.find(params[:id])
+    @shelters = Shelter.all
   end
 
   # POST /shelters
