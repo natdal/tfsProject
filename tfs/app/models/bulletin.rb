@@ -4,4 +4,7 @@ class Bulletin < ActiveRecord::Base
     
     has_many :posts, dependent: :destroy #post과 일대다 관계 형성(has_many시 복수형 선언)
                                          #dependent속성에 destroy를 줌으로써 연결된 bulletin 레코드가 삭제될 때 여기에 속하는 모든 posts도 동시에 삭제된다.
+
+    belongs_to :user
+    belongs_to :shelter
 end

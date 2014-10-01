@@ -13,15 +13,15 @@ gem 'bootstrap-sass', '3.2.0.2' #Twitter-Bootstrap을 레일스 프로젝트에�
 gem 'font-awesome-rails', '~> 4.2.0.0'
 gem 'jquery-ui-rails', '~> 5.0.0'
 
-
+#카트과정
+gem 'acts_as_shopping_cart', '~> 0.2.1'
 
 #게시판과정
 gem 'simple_form' #bootstrap과 함께 form을 사용할 때 잘 어울리는 젬
 gem 'acts-as-taggable-on' #태그 젬
 gem 'friendly_id', '~> 5.0.0' #id값 대신에 특정 속성값으로 호출을 해주는 젬(ex localhost:3000/bulletin/id=2 대신에 localhost:3000/bulletin/공지사항)
 
-#카트과정
-gem 'acts_as_shopping_cart', '~> 0.2.1'
+
 
 #유저과정
 gem 'bcrypt',         '3.1.7'

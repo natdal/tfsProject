@@ -1,7 +1,7 @@
-<h1>Listing shelters</h1>
-
+<div class="shelter_wrap">
+  <div class="shelter_create_wrap">
 <table>
-  <thead>
+  <thead style="display:none;">
     <tr>
       <th>Name</th>
       <th>Introduce</th>
@@ -24,7 +24,7 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Shelter', new_shelter_path %>
+<%= link_to '쉘터만들기', new_shelter_path, class:"btn btn-default btn-round btn-line btn-lg"%>
+</div>
+</div>

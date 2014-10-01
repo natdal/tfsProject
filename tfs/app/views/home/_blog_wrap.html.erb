@@ -57,77 +57,28 @@
 		</div>
 	</div>
 	<hr>
-	<div class="media">
-		<a class="pull-left" href="home/blog_view"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
-	<hr>
-	<div class="media">
-		<a class="pull-left" href="#"> <%= image_tag "11111.PNG", size: "100x100" %> </a>
-		<div class="media-body">
-			<h4 class="media-heading">슬랙스 후기!!!!</h4>
-			<a>옷맵시 핵허러</a>
-		</div>
-	</div>
+	
+	<ul>
+		<% @blogs.each do |blog|   %>
+		<li id="micropost-<%= blog.id %>">
+  <%= link_to gravatar_for(blog.user), blog.user %>
+  <span class="user"><%= link_to blog.user.name, blog.user %></span>
+  <span class="content">
+  <%= blog.content %>
+  <%= image_tag blog.picture.url if blog.picture? %>
+
+ </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(blog.created_at) %> ago.
+     <% if current_user?(blog.user) %>
+      <%= link_to "delete", blog, method: :delete,
+                                       data: { confirm: "You sure?" },
+                                       title: blog.content %>
+    <% end %>
+  </span>
+</li>
+<% end %>
+	</ul>
 	<hr>
 
 </div>

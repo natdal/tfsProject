@@ -15,9 +15,9 @@
         <td><%= bulletin.title %></td>
         <td><%= bulletin.description %></td>
         <td>
-          <%= link_to 'Show', bulletin, class: 'btn btn-default' %>
-          <%= link_to 'Edit', edit_bulletin_path(bulletin), class: 'btn btn-default' %>
-          <%= link_to 'Destroy', bulletin, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+          <%= link_to 'Show', [bulletin.shelter, bulletin], class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_shelter_bulletin_path(bulletin.shelter, bulletin), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', [bulletin.shelter, bulletin], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
         </td>
       </tr>
     <% end %>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Bulletin', new_bulletin_path, class: 'btn btn-default' %>
+<%= link_to 'New Bulletin', new_shelter_bulletin_path, class: 'btn btn-default' %>

@@ -3,7 +3,9 @@ class Cart < ActiveRecord::Base
 	belongs_to :user
 
 
-	def tax_pct #부가세 가 있을경우 
-    	10
-  	end
+
+
+	def tax_pct
+	0 #tax = 0
+	end
 end

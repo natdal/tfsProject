@@ -17,5 +17,6 @@
 //= require template/fileupload
 //= require template/dataTables
 //= require template/dataTables_bootstrap
+//= require template/cleditor
 //= require turbolinks
 //= require_tree .

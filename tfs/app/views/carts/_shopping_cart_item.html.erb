@@ -11,7 +11,7 @@
  
 <!--  <div><%= link_to '제거', cart_path(:id => 1) , method: :delete  %></div>
  -->
-   <%= button_to "제거", { action: "destroy", id: shopping_cart_item.item.id , amount: 2},
+   <%= button_to "제거", { action: "destroy", id: shopping_cart_item.item.id , amount: 1},
                                 method: :delete, data: { confirm: "Are you sure?" } %>
 
 </div>e

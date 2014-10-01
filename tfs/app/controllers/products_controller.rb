@@ -11,8 +11,19 @@ class ProductsController < ApplicationController
 
 	def index
 		@user = User.find(current_user)
+		@products = @user.productFeed.paginate(page: params[:page])
+	end
+
+	def myindex
+		@user = User.find(current_user)
 		@products = @user.products.paginate(page: params[:page])
 	end
+		
+	
+
+	def sell_list
+
+	 end
 
 	
 	def create

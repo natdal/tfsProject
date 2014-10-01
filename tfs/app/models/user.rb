@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
       has_many :microposts, dependent: :destroy
-      has_many :orders #유저는 여러개의 오더를 가질수 있음
-      has_many :products, dependent: :destroy
       has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -11,9 +9,10 @@ class User < ActiveRecord::Base
 
       has_many :following, through: :active_relationships, source: :followed
       has_many :followers, through: :passive_relationships, source: :follower
-
-      has_many :shelter, dependent: :destroy
-
+      has_many :products
+      has_one :shelter, dependent: :destroy
+      has_many :bulletins, dependent: :destroy
+      
      attr_accessor :remember_token, :activation_token , :reset_token#getter, setter 지정
      before_save :downcase_email   # user가 디비에 저장되기 전에 email 주소를 소문자로 변경
      before_create :create_activation_digest # user를 생성하기전 activation_digest를 생성
@@ -104,6 +103,9 @@ class User < ActiveRecord::Base
     Micropost.from_users_followed_by(self)
   end
 
+  def productFeed
+    Product.from_users_followed_by(self)
+  end
 
   private
 

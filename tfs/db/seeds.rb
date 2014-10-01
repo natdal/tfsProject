@@ -26,6 +26,13 @@ User.create!(name:  "Example User",
               activated_at: Time.zone.now)
 end
 
+
+
+            
+            
+             
+             
+           
  #Microposts
 User.order(:created_at).take(6).each do |user|
   50.times do
@@ -42,3 +49,7 @@ following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
 
+Shelter.create!(name:  "ksk",
+             introduce: "test",
+             user_id: 1,
+             lonlat: 223424234)

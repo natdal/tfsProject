@@ -3,6 +3,7 @@ class Shelter < ActiveRecord::Base
 	belongs_to :tmap
 	validates :user_id , presence: true
 	validates :lonlat, presence: true
+	has_many :bulletins, dependent: :destroy
   #TYPES = %w( All )
 #  TYPES = %w( All Commerce Blog )
 #  before_save :set_type

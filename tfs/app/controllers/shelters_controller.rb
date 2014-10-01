@@ -2,7 +2,7 @@ class SheltersController < ApplicationController
   before_action :set_shelter, only: [:show, :edit, :update, :destroy]
   before_action :set_user
   #before_action :set_tmap, only: [:index, :show, :edit, :update, :destroy]
-
+  
 
   respond_to :html, :js
 
@@ -10,34 +10,36 @@ class SheltersController < ApplicationController
   # GET /shelters
   # GET /shelters.json
   def index
-    @shelters = Shelter.all
+    @user = User.find(current_user.id)
+    @shelters = @user.shelters
+    unless @shelters.nil?
+      render show
   end
-
+end
   # GET /shelters/1
   # GET /shelters/1.json
   def show
-    @shelter =  Shelter.find(params[:id])
+ 
   end
 
   # GET /shelters/new
   def new
     #@shelter = @user.shelter.new
     #redirect_to [@user.shelter, @shelter]
-    @shelter = Shelter.new
-    @shelters = Shelter.all
+    @user = User.find(current_user.id)
+    @shelter = Shelter.new(user_id: @user.id)
+    
   end
 
   # GET /shelters/1/edit
   def edit
-    @shelter =  Shelter.find(params[:id])
-    @shelters = Shelter.all
   end
 
   # POST /shelters
   # POST /shelters.json
   def create
     #@shelter = Shelter.new(shelter_params)
-    @shelter = @user.shelter.new(shelter_params)
+    @shelter = @user.shelters.new(shelter_params)
     #@tmap = Tmap.new(id: 1)
     #@shelter.tmap_id = @tmap.id
     respond_to do |format|
@@ -91,13 +93,16 @@ class SheltersController < ApplicationController
       @user = User.find(current_user.id)
     end
 
+
+    
+
     # Use callbacks to share common setup or constraints between actions.
     def set_shelter
       #@shelter = Shelter.find(params[:id])
-      @shelter = Shelter.find_by(user_id: current_user.id) || Shelter.create(user_id: current_user)
+      @shelter = current_user.shelter || Shelter.create!(user_id: current_user, introduce: "empty", lonlat: 0000)
       #@tmap = Tmap.find_by(id: 1)
       #@shelter.tmap_id = @tmap
-
+      
     end
 
     #def set_tmap

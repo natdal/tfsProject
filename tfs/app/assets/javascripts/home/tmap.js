@@ -1,4 +1,5 @@
- document.write("<script  language='javascript' src='https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=ed27c36c-56a6-3678-ab90-1a4f7ea6eead'></script>");  
+/*document.write("<script  language='javascript' src='https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=30c68bc1-8813-3f13-9c99-d3660cf91545'></script>");  */
+
 var map;//홈쪽 맵 
 //var map_shelter_create;//쉘터생성쪽 맵
 var zoom, mapW, mapH, mapDiv; //맵 초기화시 사용상수
@@ -21,8 +22,11 @@ var markers; //레이어 관련 변수
 var initialize = function(){
 	setVariables();
 	map = new Tmap.Map({div:mapDiv});
+	map.ctrl_panzoom.div.style.top= "50px"
 	//map_shelter_create = new Tmap.Map({div:mapDiv_shelter_create});
 	setLayers();
+
+	SetLonlatEvents();
 
 	shelterLoader();
 };
@@ -53,6 +57,9 @@ function setLayers(){
 	markers = new Tmap.Layer.Markers("MarkerLayer");
 	map.addLayer(markers);
 }
+
+
+
 
 function get3857LonLat(coordX, coordY){//좌표변환메서드
 	lonlat = map.getLonLatFromViewPortPx(coordX, coordY);
@@ -266,7 +273,7 @@ function shelterLoader(){
 
 			/*좌표변환해서 넣어야한다*/
 			/*var trLonLat = get3857LonLat(coordX, coordY);*/
-
+//icon img넣는 곳
 	var shelterIcon = new Tmap.IconHtml("<img src='assets/images/shelter/123.jpg'/>", size, offset);//marker
 
 	var shelterMarker = new Tmap.Markers(new Tmap.LonLat(lon, lat), shelterIcon);
@@ -297,4 +304,40 @@ function onShelterOut(e){
 
 function onShelterClick(e){
 	/*여기에 쉘터마커 클릭했을 때 쉘터로 이동하는거 만들기*/
+}
+
+
+
+
+
+
+
+
+
+function SetLonlatEvents(){//쉘터 생성할때 좌표 지정하기 위한 메서드
+	map.events.register("click", map, onClickMap);
+};
+
+function onClickMap(e){ 
+	markers.clearMarkers();
+	
+	lonlat = map.getLonLatFromViewPortPx(e.xy);
+	//lonlat.transform(pr_3857, pr_4326);//좌표변환하면 마커가 생성이 안된다.
+	alert(lonlat); 
+
+
+	/*$("#lon").val(lonlat.)
+	$("#lat").val(lonlat.)*/
+	$("#lonlat").val(lonlat);
+	/*addMarker(lonlat);*/
+
+
+
+	/*marker*/
+	var size = new Tmap.Size(21,25);
+	var offset = new Tmap.Pixel(-(size.w/2), -size.h);
+	var icon = new Tmap.Icon('<img src="123.jpg" style="z-index:9999px"/>',size,offset);
+	/*var icon = new Tmap.IconHtml('<div class="shelter" style="border:10px solid black;"><div onClick="test1()" style="text-decoration: none;	color: RED;	font-size: 9pt;">AAAAAAAAA</div><div onClick="test2()"><img src="img/d.png" /></div><div onClick="test3()" style="text-decoration: none;	color: BLUE;	font-size: 9pt;">QQQQQQQQQQQQQQQQQQQqQ</div></div>',size,offset);*/
+	var marker = new Tmap.Marker(lonlat,icon);
+	markers.addMarker(marker);
 }
