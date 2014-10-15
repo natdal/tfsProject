@@ -1,0 +1,168 @@
+<div id="top">
+    <!-- 상단네비게이션창 김수겸 14.09.01-->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span><span
+                class="icon-bar"></span><span class="icon-bar"></span><span
+                class="icon-bar"></span>
+            </button>
+            <%= link_to '247', root_path,class:'navbar-brand' %>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="search_bar">
+                <form class="navbar-form navbar-left" role="search" id="main_search"><!-- id 값줬다 -->
+                    <select class="btn btn-info btn-line">
+                        <option value="전체">전체</option>
+                        <option value="커머스">커머스</option>
+                        <option value="블로그">블로그</option>
+                    </select>
+                    <div class="form-group" id="serch_horizon">
+                        <input type="text" class="form-control" placeholder="Search" id="searchText"><!-- 수정 : id 추가 -->
+                    </div>
+                    <a class="btn btn-info btn-line" onClick="tMapPoi()"> <!-- 수정 : onClick추가 -->
+                        검색
+                    </a>
+                </form>
+            </div>
+
+            <!-- 알람,딴집가기,내집가기  김수겸 14.09.01-->
+            <ul class="nav navbar-nav navbar-right">
+                <!--알람-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle"
+                    data-toggle="dropdown" href="#alarm"> <span class="label label-info">2</span> <i class="fa fa-bell"></i>&nbsp; <i class="fa fa-sort-desc"></i> </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                            <div>
+                                <i class="icon-comment"></i> New Comment <span class="pull-right text-muted small"> 4 minutes ago</span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                            <div>
+                                <i class="icon-twitter info"></i> 3 New Follower <span class="pull-right text-muted small"> 9 minutes ago</span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                            <div>
+                                <i class="icon-envelope"></i> Message Sent <span class="pull-right text-muted small"> 20 minutes ago</span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                            <div>
+                                <i class="icon-tasks"></i> New Task <span class="pull-right text-muted small"> 1 Hour ago</span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                            <div>
+                                <i class="icon-upload"></i> Server Rebooted <span class="pull-right text-muted small"> 2 Hour ago</span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#"> <strong>See All Alerts</strong> <i class="icon-angle-right"></i> </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--알람end-->
+
+                <!--메세지-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#"> <span class="label label-success">2</span> <i class="fa fa-envelope"></i>&nbsp; <i class="fa fa-sort-desc"></i> </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                            <div>
+                                <strong>John Smith</strong>
+                                <span class="pull-right text-muted"> <em>Today</em> </span>
+                            </div>
+                            <div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                <br>
+                                <span class="label label-primary">Important</span>
+
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                            <div>
+                                <strong>Raphel Jonson</strong>
+                                <span class="pull-right text-muted"> <em>Yesterday</em> </span>
+                            </div>
+                            <div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                <br>
+                                <span class="label label-success"> Moderate </span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                            <div>
+                                <strong>Chi Ley Suk</strong>
+                                <span class="pull-right text-muted"> <em>26 Jan 2014</em> </span>
+                            </div>
+                            <div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                <br>
+                                <span class="label label-danger"> Low </span>
+                            </div> </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#"> <strong>Read All Messages</strong> <i class="icon-angle-right"></i> </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--메세지 end-->
+
+                <!--친구-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle"
+                    data-toggle="dropdown" href="#"> <i class="fa fa-user"></i>&nbsp; <i class="fa fa-sort-desc"></i> </a>
+                </li>
+                <!--친구 end-->
+
+                <!--profile-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle profile" data-toggle="dropdown">
+                    <div class="avatar">
+                        <%= image_tag "11111.PNG", class:"img-rounded" %>
+                    </div>
+                    <div class="user-mini pull-left">
+                        <span class="welcome">Welcome</span>
+                        <span>김수겸</span>
+                    </div> </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><span>내집가기</span> </a>
+                        </li>
+                        <li>                            
+                            <a href="blog_list" class="ajax-link"> <span>내블로그가기</span> </a>
+                        </li>
+                        <li>
+                            <a href="ajax/page_messages.html" class="ajax-link"> <span>내커머스가기</span> </a>
+                        </li>
+                        <li>
+                            <a href="ajax/page_messages.html" class="ajax-link"> <span>로그아웃</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--profile end-->
+            </ul>
+            <!-- 알람,딴집가기,내집가기 end -->
+        </div>
+    </div>
+</div>
+<!-- 상단네비게이션창 end -->

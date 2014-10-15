@@ -1,0 +1,33 @@
+<%= form_for(@tmap) do |f| %>
+  <% if @tmap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tmap.errors.count, "error") %> prohibited this tmap from being saved:</h2>
+
+      <ul>
+      <% @tmap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :classification %><br>
+    <%= f.text_field :classification %>
+  </div>
+  <div class="field">
+    <%= f.label :coordinate_lat %><br>
+    <%= f.text_field :coordinate_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :coordinat_lon %><br>
+    <%= f.text_field :coordinat_lon %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+
+
+rails g scaffold tmap name classification coordinate_lat coordinat_lon
+
+
+rails g migration AddTmapinIdToShelters shelter_id:Integer:index
+
+
+쉘터 네임 넣을꼬얌
+
+전체
+커머스
+블로그
+
+
+이부분 메인 딴에서 합체
+
+
+
