@@ -25,9 +25,6 @@ var initialize = function(){
 	map.ctrl_panzoom.div.style.top= "50px"
 	//map_shelter_create = new Tmap.Map({div:mapDiv_shelter_create});
 	setLayers();
-
-	SetLonlatEvents();
-
 	shelterLoader();
 };
 
